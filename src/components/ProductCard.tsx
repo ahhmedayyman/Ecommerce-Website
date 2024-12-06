@@ -1,6 +1,8 @@
 // import { Button } from "@/components/ui/button";
 // import { cn } from "@/lib/utils";
 
+import Button from "./ui/Button";
+
 interface IProps {
   title: string;
   description: string;
@@ -42,9 +44,9 @@ const ProductCard = ({
           </span>
         </div>
 
-        <div className="w-full flex justify-between gap-2 text-white">
-          <button className="w-1/2 p-2 rounded bg-indigo-500">Edit</button>
-          <button className="w-1/2 p-2 rounded bg-red-500">Destroy</button>
+        <div className="flex justify-between gap-2">
+          <Button className="bg-indigo-500" onClick={() => console.log("clicked")}>Edit</Button>
+          <Button className="bg-red-500">Destroy</Button>
         </div>
       </div>
     </div>
