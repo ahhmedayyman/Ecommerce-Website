@@ -1,34 +1,26 @@
-// import { Button } from "@/components/ui/button";
-// import { cn } from "@/lib/utils";
 
+import { IProduct } from "../interfaces";
 import Button from "./ui/Button";
-import Image from "./ui/image";
+import Image from "./ui/Image";
 
 interface IProps {
-  title: string;
-  description: string;
-  price: number;
-  imageUrl: string;
+ product: IProduct
 }
 
-const ProductCard = ({
-  title = "Slim Fit Fine-knit Turtleneck Sweater",
-  description = "Button-up shirt sleeves and a relaxed silhouette. It's tailored with drapey.",
-  price = 89.99,
-  imageUrl = "https://townteam.com/cdn/shop/files/UND25GSCR33333TM1-White_1370x.jpg?v=1724572052",
-}: IProps) => {
+const ProductCard = ({product}: IProps) => {
+
   return (
     <div className="border rounded-xl p-2 flex flex-col w-full md:w-mdwidth lg:w-lgwidth bg-white shadow-sm hover:shadow-md transition-all duration-300">
       <div className="w-full h-[350px] overflow-hidden rounded-lg mb-4 group">
-        <Image imageURL={imageUrl} alt={title} className="w-full h-full object-cover object-left-top transform group-hover:scale-105 transition-transform duration-500" />
+        <Image imageURL={product.imageURL} alt={product.title} className="w-full h-full object-cover object-left-top transform group-hover:scale-105 transition-transform duration-500" />
       </div>
 
       <div className="flex-1 flex flex-col">
         <h3 className="text-lg mb-1">
-          {title}
+          {product.title}
         </h3>
 
-        <p className="text-sm text-gray-500 mb-4">{description}</p>
+        <p className="text-sm text-gray-500 mb-4">{product.description}</p>
         <div className="flex flex-row items-center space-x-2 mb-2">
           <span className="w-5 h-5 bg-indigo-500 rounded-full border cursor-pointer" />
           <span className="w-5 h-5 bg-yellow-500 rounded-full cursor-pointer" />
@@ -37,13 +29,13 @@ const ProductCard = ({
 
         <div className="mb-4 flex justify-between items-center">
           <span className="text-lg font-semibold text-indigo-500">
-            ${price.toFixed(2)}
+            {product.price}
           </span>
-          <Image imageURL={imageUrl} alt={title} className="w-10 h-10 rounded-full object-cover object-left-top" />
+          <Image imageURL={product.imageURL} alt={product.title} className="w-10 h-10 rounded-full object-cover object-left-top" />
         </div>
 
         <div className="flex justify-between gap-2">
-          <Button className="bg-indigo-500" onClick={() => console.log("clicked")}>Edit</Button>
+          <Button className="bg-indigo-500">Edit</Button>
           <Button className="bg-red-500">Destroy</Button>
         </div>
       </div>
