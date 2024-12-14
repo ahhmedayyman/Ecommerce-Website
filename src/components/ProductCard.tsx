@@ -20,7 +20,7 @@ const ProductCard = ({product}: IProps) => {
           {title}
         </h3>
 
-        <p className="text-sm text-gray-500 mb-4">{description}</p>
+        <p className="text-sm text-gray-500 mb-4 line-clamp-2">{description}</p>
         <div className="flex flex-row items-center space-x-2 mb-2">
           <span className="w-5 h-5 bg-indigo-500 rounded-full border cursor-pointer" />
           <span className="w-5 h-5 bg-yellow-500 rounded-full cursor-pointer" />
