@@ -1,7 +1,7 @@
 import ProductCard from "./components/ProductCard";
 import Navbar from "./components/Navbar";
 import { productList } from "./data";
-// import Footer from "./components/Footer";
+import Footer from "./components/Footer";
 
 const App = () => {
   const renderProductList = productList.map((product) => (
@@ -18,7 +18,7 @@ const App = () => {
         </div>
       </div>
       <div>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </>
   );
