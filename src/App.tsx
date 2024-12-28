@@ -1,5 +1,5 @@
 import ProductCard from "./components/ProductCard";
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
 import { productList } from "./data";
 import Footer from "./components/Footer";
 
@@ -10,7 +10,7 @@ const App = () => {
   return (
     <>
       <div>
-        <Navbar />
+        {/* <Navbar /> */}
       </div>
       <div className="container mx-auto">
         <div className="flex justify-between flex-wrap gap-3 w-custom mt-4">
